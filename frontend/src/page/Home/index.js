@@ -6,7 +6,7 @@ class Home extends Component {
   render() {
     return (
     <HomeWrapper>
-      <HomeTitle>Welcome to Assessment 1b</HomeTitle>
+      <HomeTitle>Welcome to Assessment 1B</HomeTitle>
     </HomeWrapper>
     )
   }
