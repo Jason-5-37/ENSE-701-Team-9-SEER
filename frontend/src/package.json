@@ -13,18 +13,14 @@
     "react-scripts": "^4.0.0"
   },
   "devDependencies": {
-    "react-scripts": "1.0.0",
     "typescript": "^4.0.5"
   },
   "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom"
   },
-  "title": "侧边布局 - antd@4.20.1",
-  "name": "antd4201",
-  "description": null,
-  "version": "0.0.0"
+  "title": "侧边布局 - antd@4.20.1"
 }

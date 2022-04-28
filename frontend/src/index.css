@@ -1,0 +1,13 @@
+.logo {
+  height: 20%;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+  background-image:url(/public/logo192.png)
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+  [data-theme="dark"] .site-layout .site-layout-background {
+    background: #141414;
+  }
