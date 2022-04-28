@@ -21,10 +21,14 @@ function getItem(label, key, icon, children) {
 }
 
 const items = [
-  getItem('Artile', '1', <PieChartOutlined />),
-  getItem('SubmitArticle', '2', <DesktopOutlined />),
-  
-  getItem('Team', 'sub2', <TeamOutlined />, [getItem('TeamNumber', '6'),]),
+  getItem('Option 1', '1', <PieChartOutlined />),
+  getItem('Option 2', '2', <DesktopOutlined />),
+  getItem('User', 'sub1', <UserOutlined />, [
+    getItem('Tom', '3'),
+    getItem('Bill', '4'),
+    getItem('Alex', '5'),
+  ]),
+  getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
   getItem('Files', '9', <FileOutlined />),
 ];
 
@@ -68,9 +72,8 @@ class SiderDemo extends React.Component {
                 margin: '16px 0',
               }}
             >
-              <Breadcrumb.Item>Home</Breadcrumb.Item>
-              <Breadcrumb.Item>
-            Article</Breadcrumb.Item>
+              <Breadcrumb.Item>User</Breadcrumb.Item>
+              <Breadcrumb.Item>Bill</Breadcrumb.Item>
             </Breadcrumb>
             <div
               className="site-layout-background"
@@ -79,12 +82,16 @@ class SiderDemo extends React.Component {
                 minHeight: 360,
               }}
             >
-             {/* home */}
-             hbiii
+              Bill is a cat.
             </div>
           </Content>
-      
-     
+          <Footer
+            style={{
+              textAlign: 'center',
+            }}
+          >
+            Ant Design ©2018 Created by Ant UED
+          </Footer>
         </Layout>
       </Layout>
     );
