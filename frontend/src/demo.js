@@ -4,10 +4,10 @@ import './index.css';
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
   DesktopOutlined,
-  PieChartOutlined,
   FileOutlined,
   TeamOutlined,
-  UserOutlined,
+  HomeFilled,
+  CommentOutlined 
 } from '@ant-design/icons';
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -21,15 +21,17 @@ function getItem(label, key, icon, children) {
 }
 
 const items = [
-  getItem('Option 1', '1', <PieChartOutlined />),
-  getItem('Option 2', '2', <DesktopOutlined />),
-  getItem('User', 'sub1', <UserOutlined />, [
-    getItem('Tom', '3'),
-    getItem('Bill', '4'),
-    getItem('Alex', '5'),
-  ]),
-  getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
-  getItem('Files', '9', <FileOutlined />),
+  getItem('Home', '1', <HomeFilled />),
+  getItem('Select the Article', '2', <DesktopOutlined />),
+  // getItem('User', 'sub1', <UserOutlined />, [
+  //   getItem('Tom', '3'),
+  //   getItem('Bill', '4'),
+  //   getItem('Alex', '5'),
+  // ]),
+  
+  getItem('TeamNumber', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
+  getItem('Submit an Article', '9', <FileOutlined />),
+  getItem('Contact us','3',<CommentOutlined />),
 ];
 
 class SiderDemo extends React.Component {
@@ -72,8 +74,7 @@ class SiderDemo extends React.Component {
                 margin: '16px 0',
               }}
             >
-              <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>Bill</Breadcrumb.Item>
+              <Breadcrumb.Item>Home</Breadcrumb.Item>
             </Breadcrumb>
             <div
               className="site-layout-background"
@@ -83,6 +84,7 @@ class SiderDemo extends React.Component {
               }}
             >
               Bill is a cat.
+              
             </div>
           </Content>
           <Footer
@@ -90,7 +92,6 @@ class SiderDemo extends React.Component {
               textAlign: 'center',
             }}
           >
-            Ant Design ©2018 Created by Ant UED
           </Footer>
         </Layout>
       </Layout>
