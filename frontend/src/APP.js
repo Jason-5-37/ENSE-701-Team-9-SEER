@@ -7,10 +7,8 @@ import { BrowserRouter as Router, Route,Link,Switch} from 'react-router-dom';
 import Contactus from './Component/Contactus';
 import Home from './Component/Home';
 import {
- 
-  HomeOutlined,
-
-  EditOutlined,
+  PieChartOutlined,
+  DesktopOutlined 
 } from '@ant-design/icons'
 const { Header, Content,  Sider } = Layout;
 class SiderDemo extends Component {
@@ -35,14 +33,15 @@ class SiderDemo extends Component {
               
                 style={{ height: '100%', borderRight: 0 }}
               >
-                <Menu.Item key="/home" icon={<HomeOutlined />}>
-                  <Link to="/home">Article</Link>
+                <Menu.Item key="/home" >
+               <Link to="/home"> <PieChartOutlined />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Article</Link>
+                
                 </Menu.Item>
                 {/* <Menu.Item key="/home/list" icon={<DiffOutlined />}>
                   <Link to="/home/list">内容管理</Link>
                 </Menu.Item> */}
-                <Menu.Item key="/contactus" icon={<EditOutlined />}>
-                  <Link to="/contactus">Contact us</Link>
+                <Menu.Item key="/contactus">
+                  <Link to="/contactus"><DesktopOutlined />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact us</Link>
                 </Menu.Item>
               </Menu>
         </Sider>
