@@ -7,11 +7,11 @@
   ],
   "dependencies": {
     "@ant-design/icons": "latest",
-    "antd": "^3.26.20",
+    "antd": "^4.7.0",
     "i": "^0.3.7",
     "npm": "^8.8.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react-dom": "^18.0.0-rc.3",
     "react-router-dom": "^5.3.1",
     "react-scripts": "^4.0.0"
   },
@@ -26,8 +26,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "title": "侧边布局 - antd@4.20.1",
+  "title": "基本使用 - antd@4.20.2",
+  
   "name": "antd4201",
-  "description": null,
   "version": "0.0.0"
 }
