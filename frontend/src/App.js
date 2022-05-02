@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div>
         <GlobalStyle />
-        <Header />
+          <Header />
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />

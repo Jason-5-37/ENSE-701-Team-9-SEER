@@ -6,7 +6,7 @@ class Header extends Component {
   render() {
     return (
         <HeaderWrapper>
-          <Title>ENSE701 Assessment 1b</Title>
+          <Title>ENSE701</Title>
           <Navbar>
             <NavItem href="/">Home</NavItem>
             <NavItem href="/SearchArticle">Search article</NavItem>

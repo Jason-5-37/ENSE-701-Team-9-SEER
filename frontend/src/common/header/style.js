@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
-    height: 130px;
-    width: 100%;
+    height: 100%;
+    width: 200px;
     background: lightblue;
+    flow:left;
 `;
 
 export const Title = styled.div`
