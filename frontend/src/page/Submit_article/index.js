@@ -28,7 +28,7 @@ class Submit_article extends Component {
               <input placeholder="DOI" ref={(input) => {this.DOI = input}}/>
             </SubmitInput>
             <SubmitInput>
-            PubYear: 
+            Public Year: 
               <input placeholder="PubYear" ref={(input) => {this.PubYear = input}} type="date" />
             </SubmitInput>
             <SubmitInput>
