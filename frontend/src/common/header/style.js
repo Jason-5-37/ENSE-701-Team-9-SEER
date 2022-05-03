@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HeaderWrapper = styled.div`
     height: 100%;
@@ -15,14 +15,14 @@ export const Title = styled.div`
     line-height: 250%;
     background: pink;
     font-size: 200%;
-`
+`;
 
 export const Navbar = styled.div`
     height: 40%;
     width: 100%;
     flow: leff;
     padding-left: 2%;
-`
+`;
 
 export const NavItem = styled.a`
     font-size: 15px;
@@ -33,4 +33,4 @@ export const NavItem = styled.a`
     color: #0008FF;
     text-decoration: none;
     font-size: 150%;
-`
+`;

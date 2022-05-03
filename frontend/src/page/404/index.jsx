@@ -1,18 +1,17 @@
-import React, { Component } from "react";
+import React, { PureComponent } from 'react';
 
-class NotFound extends Component {
-
+class NotFound extends PureComponent {
   render() {
     return (
-        <div>
+      <div>
         <h1>Page Not Found</h1>
         <h1>Page Not Found</h1>
         <h1>Page Not Found</h1>
         <h1>Page Not Found</h1>
         <h1>Page Not Found</h1>
         <h1>Page Not Found</h1>
-        </div>
-    )
+      </div>
+    );
   }
 }
 
