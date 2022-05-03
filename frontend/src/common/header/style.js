@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
-    height: 100%;
-    width: 200px;
+    height: 150px;
+    width: 100%;
     background: lightblue;
     flow:left;
 `;
