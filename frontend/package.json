@@ -7,6 +7,7 @@
   ],
   "dependencies": {
     "@ant-design/icons": "latest",
+    "@hookform/resolvers": "^2.8.8",
     "antd": "^4.7.0",
     "i": "^0.3.7",
     "npm": "^8.8.0",
@@ -27,7 +28,6 @@
     "eject": "react-scripts eject"
   },
   "title": "基本使用 - antd@4.20.2",
-  
   "name": "antd4201",
   "version": "0.0.0"
 }

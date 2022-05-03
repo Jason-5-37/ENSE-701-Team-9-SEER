@@ -4,9 +4,9 @@ import './index.css';
 import { Layout, Menu,Breadcrumb} from 'antd';
 import { BrowserRouter as Router, Route,Link,Switch} from 'react-router-dom';
 // import Link from 'umi/link';
-import Contactus from './Component/Contactus';
-import Home from './Component/Home';
-import Submit from './Component/Submit';
+import Contactus from './Component/Contactus.js';
+import Home from './Component/Home.js';
+import Submit from './Component/Submit.js';
 import {
   PieChartOutlined,
   DesktopOutlined 
