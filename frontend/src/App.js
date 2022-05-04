@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { GlobalStyle } from './style';
+import { Provider } from 'react-redux';
+import store from './store';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Header from "./common/header";
+import Home from "./page/Home";
+import Search_article from "./page/Search_article";
+import Submit_article from "./page/Submit_article";
+import Contantus from "./page/Contantus";
+import NotFound from "./page/404";
+
+class App extends Component {
+
+  render() {
+    return (
+      <Provider store={store}>
+        <GlobalStyle />
+        <Header />
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/SearchArticle" component={Search_article} />
+            <Route exact path="/SubmitArticle" component={Submit_article} />
+            <Route exact path="/Contantus" component={Contantus} />
+            <Route exact path="/404" component={NotFound} />
+            <Route path="*" component={NotFound} />
+          </Switch>
+        </Router>
+      </Provider>
+    )
+  }
 }
 
 export default App;
