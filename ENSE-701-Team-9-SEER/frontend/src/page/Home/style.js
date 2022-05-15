@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HomeWrapper = styled.div`
     width:100 ;
     color:White;
-    background-color: #0D1117;
+    background-color:#161B22;
     text-align: center;
     margin-top:15px;
     margin-bottom:10px;
@@ -12,7 +12,7 @@ export const HomeWrapper = styled.div`
 export const HomeTitle = styled.div`
     height: 20%;
     width: 100%;
-    background-color:#0D1117;
+    background-color:#161B22;
     color:White;
    
     margin: 5% auto;

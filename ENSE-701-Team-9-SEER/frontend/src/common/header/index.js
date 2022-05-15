@@ -10,7 +10,7 @@ class Header extends Component {
           <Navbar>
             <NavItem href="/">Home</NavItem>
             <NavItem href="/SearchArticle">Search article</NavItem>
-            <NavItem href="/SubmitArticle">submit article</NavItem>
+            <NavItem href="/SubmitArticle">Submit article</NavItem>
             <NavItem href="/Contantus">Contant us</NavItem>
           </Navbar>
         </HeaderWrapper>
