@@ -5,6 +5,9 @@ export const HeaderWrapper = styled.div`
     width: 100%;
     background:#0D1117;
     flow:left;
+    '&:hover': {
+        backgroundColor: 'white',
+      },
 `;
 
 export const Title = styled.div`
@@ -16,6 +19,9 @@ export const Title = styled.div`
     line-height: 250%;
     background: #161B22;
     font-size: 200%;
+    '&:hover': {
+        backgroundColor: 'white',
+      },
 `
 
 export const Navbar = styled.div`
@@ -24,6 +30,9 @@ export const Navbar = styled.div`
     width: 100%;
     flow: leff;
     padding-left: 2%;
+    '&:hover': {
+        backgroundColor: 'white',
+      },
 `
 
 export const NavItem = styled.a`
@@ -36,4 +45,7 @@ export const NavItem = styled.a`
     color:#58A6FF;
     text-decoration: none;
     font-size: 150%;
+    '&:hover': {
+        backgroundColor: 'white',
+      },
 `
