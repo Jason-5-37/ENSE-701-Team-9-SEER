@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
 export const SubmitpageWrapper = styled.div`
-    width: 70%;
-    background: grey;
-    margin: 5% auto;
-    padding: 1% 1%;
+    background-size:00%;
+    background: #161B22;
+   
 `;
 
 export const SubmitpageTitle = styled.div`
     height: 20%;
     width: 100%;
-    background: pink;
+    background:  #0D1117;
     margin: 5% auto;
     font-size: 200%;
     text-align: center;
+    color:White;
 `;
 
 export const SubmitInput = styled.div`
@@ -23,6 +23,7 @@ export const SubmitInput = styled.div`
     font-size: 200%;
     text-align: center;
     font-size: 20px;
+    color:white;
 `;
 
 
