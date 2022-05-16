@@ -18,20 +18,16 @@ export const getArticles = () => {
     }
 }
 
-const SearchInput = (Searchinput) => ({
-    type: constants.GETSEACHINPUT,
-    Searchinput
-})
-
-const ShowState = () => ({
-    type: constants.SHOWSTATE,
-    value:true
-})
-
-export const getSearchinput = (Searchinput) =>{
+export const getSearchResult = (Searchinput) =>{
     return(dispatch) =>{
-        console.log(Searchinput);
-        dispatch(ShowState());
-        dispatch(SearchInput(Searchinput));
+        let postdate = {
+            "title": Searchinput
+        }
+        axios.post('http://localhost:8082/api/articles/search_article',postdate).then((res) =>{
+            const data = res.data;
+            dispatch(changeList(data));
+        }).catch(() => {
+            console.log('error: Can not get Search List');
+        })
     }
 }

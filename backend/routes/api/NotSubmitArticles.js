@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 // Load Book model
-const Article = require('../../models/article');
+const NotSubmitArticle = require('../../models/NotSubmitArticle');
 
 // @route GET api/books/test
 // @description tests books route
@@ -15,14 +15,8 @@ router.get('/test', (req, res) => res.send('Article route testing!'));
 // @description Get all books
 // @access Public
 router.get('/', (req, res) => {
-  Article.find()
-    .then(articles => res.json(articles))
-    .catch(err => res.status(404).json({ nobooksfound: 'No article found' }));
-});
-
-router.post('/search_article', (req, res) => {
-  Article.find({'title':req.body.title})
-    .then(articles => res.json(articles))
+    NotSubmitArticle.find()
+    .then(notsubmitarticles => res.json(notsubmitarticles))
     .catch(err => res.status(404).json({ nobooksfound: 'No article found' }));
 });
 
@@ -30,8 +24,8 @@ router.post('/search_article', (req, res) => {
 // @description Get single book by id
 // @access Public
 router.get('/:id', (req, res) => {
-  Article.findById(req.params.id)
-    .then(article => res.json(article))
+    NotSubmitArticle.findById(req.params.id)
+    .then(notsubmitarticle => res.json(notsubmitarticle))
     .catch(err => res.status(404).json({ nobookfound: 'No article found' }));
 });
 
@@ -39,18 +33,17 @@ router.get('/:id', (req, res) => {
 // @description add/save book
 // @access Public
 router.post('/', (req, res) => {
-  Article.create(req.body)
-    .then(article => res.json({ msg: 'article added successfully' }))
+    NotSubmitArticle.create(req.body)
+    .then(notsubmitarticle => res.json({ msg: 'article added successfully' }))
     .catch(err => res.status(400).json({ error: 'Unable to add this article' }));
 });
-
 
 // @route GET api/books/:id
 // @description Update book
 // @access Public
 router.post('/:id', (req, res) => {
-  Article.findByIdAndUpdate(req.params.id, req.body)
-    .then(book => res.json({ msg: 'Updated successfully' }))
+    NotSubmitArticle.findByIdAndUpdate(req.params.id, req.body)
+    .then(notsubmitarticle => res.json({ msg: 'Updated successfully' }))
     .catch(err =>
       res.status(400).json({ error: 'Unable to update the Database' })
     );
@@ -60,8 +53,8 @@ router.post('/:id', (req, res) => {
 // @description Delete book by id
 // @access Public
 router.delete('/:id', (req, res) => {
-  Article.findByIdAndRemove(req.params.id, req.body)
-    .then(article => res.json({ mgs: 'article entry deleted successfully' }))
+    NotSubmitArticle.findByIdAndRemove(req.params.id, req.body)
+    .then(notsubmitarticle => res.json({ mgs: 'article entry deleted successfully' }))
     .catch(err => res.status(404).json({ error: 'No such an article' }));
 });
 

@@ -14,7 +14,7 @@ class Search_article extends Component {
           <input ref={(input) => {this.search = input}}/>
           <Button onClick={() => this.props.SetSearch(this.search)} ></Button>
         </SearchWrapper>
-        {this.StateSwitch()}      
+        {this.ShowArticles()}      
       </SearchpageWrapper>
     )
   }
@@ -22,39 +22,6 @@ class Search_article extends Component {
   componentDidMount(){
     this.props.handleInput();
   }
-
-  StateSwitch(){
-    if(this.props.State === false){
-      return this.ShowArticles();
-    }else if(this.props.State === true){
-      return this.Search_Article(this.props.SearchInput);
-    }else{
-      return(
-        <h1>Error</h1>
-      )
-    }
-  }
-
-  Search_Article(search){
-    const {list} = this.props;
-    return list.map((item) => {
-      if(item.get('title') === search){
-        console.log(item.get('title'));
-        return(
-          <Articlelist>
-          <div>{item.get('title')}</div>
-          <div>{item.get('author')}</div>
-          <div>{item.get('source')}</div>
-          <div>{item.get('DOI')}</div>
-          <div>{item.get('ClaimedBenefit')}</div>
-          <div>{item.get('published_date')}</div>
-          <div>{item.get('LevelofEvidence')}</div>
-          </Articlelist>
-          );
-        }
-      }
-      );
-      }
 
   ShowArticles(){
     const {list} = this.props;
@@ -79,9 +46,7 @@ class Search_article extends Component {
 
 const mapStateTothis= (state) => {
   return {
-      list: state.getIn(['Search','list']),
-      SearchInput: state.getIn(['Search','SearchInput']),
-      State: state.getIn(['Search','State'])
+      list: state.getIn(['Search','list'])
   }
 }
 
@@ -91,7 +56,7 @@ const mapDispathTothis = (dispatch) => {
           dispatch(actionCreator.getArticles());
       },
       SetSearch(Searchinput){
-        dispatch(actionCreator.getSearchinput(Searchinput.value));
+        dispatch(actionCreator.getSearchResult(Searchinput.value));
       }
   }
 }
