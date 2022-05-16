@@ -23,15 +23,15 @@ router.get('/', (req, res) => {
 // @route GET api/books/:id
 // @description Get single book by id
 // @access Public
-/*
+
 router.get('/:id', (req, res) => {
     Manager.findById(req.params.id)
     .then(manager => res.json(manager))
     .catch(err => res.status(404).json({ nobookfound: 'No article found' }));
 });
-*/
 
-router.post('/yoyoyo', (req, res) => {
+
+router.post('/Search_manager', (req, res) => {
     Manager.find({'email':req.body.email})
     .then(manager => res.json(manager))
     .catch(err => res.status(404).json({ nobookfound: 'asd' }));
