@@ -36,7 +36,6 @@ export const Navbar = styled.div`
 `
 
 export const NavItem = styled.a`
-   
     font-size: 15px;
     float: left;
     cursor: pointer;

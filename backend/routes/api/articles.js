@@ -41,7 +41,7 @@ router.post('/', (req, res) => {
 // @route GET api/books/:id
 // @description Update book
 // @access Public
-router.put('/:id', (req, res) => {
+router.post('/:id', (req, res) => {
   Article.findByIdAndUpdate(req.params.id, req.body)
     .then(book => res.json({ msg: 'Updated successfully' }))
     .catch(err =>

@@ -17,3 +17,21 @@ export const getArticles = () => {
         })
     }
 }
+
+const SearchInput = (Searchinput) => ({
+    type: constants.GETSEACHINPUT,
+    Searchinput
+})
+
+const ShowState = () => ({
+    type: constants.SHOWSTATE,
+    value:true
+})
+
+export const getSearchinput = (Searchinput) =>{
+    return(dispatch) =>{
+        console.log(Searchinput);
+        dispatch(ShowState());
+        dispatch(SearchInput(Searchinput));
+    }
+}
