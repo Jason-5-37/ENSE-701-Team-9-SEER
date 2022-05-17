@@ -1,4 +1,3 @@
-import * as constants from './constants';
 import axios from 'axios';
 import { fromJS } from 'immutable';
 
@@ -14,7 +13,8 @@ export const login = (Email, Password) =>{
             if(data[0].email === Email && data[0].password === Password){
                 var storage=window.localStorage;
                 storage.setItem("Islogin", "login");
-                console.log("login");
+                //console.log("login");
+                window.location.href = './';
             }
         }).catch(() => {
             console.log('error: Can not get Search List');

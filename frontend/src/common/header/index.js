@@ -23,7 +23,10 @@ class Header extends Component {
     var Islogin = storage.getItem("Islogin");
     if (Islogin === "login"){
       return(
-        <NavItem href="/" onClick={this.logout()}>Logout</NavItem>
+        <div>
+        <NavItem href="/CheckandApprove">Check and Approve</NavItem>
+        <button onClick={() => this.logout()}>Logout</button>
+        </div>
       )
     }else{
       return(
@@ -35,6 +38,7 @@ class Header extends Component {
   logout(){
     var storage=window.localStorage;
     storage.setItem("Islogin", "Notlogin");
+    window.location.href = './';
   }
 }
 
