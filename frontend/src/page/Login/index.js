@@ -19,10 +19,13 @@ class Login extends Component {
     }else if(Islogin === "login"){
         return <Redirect to='/'/>
     }else{
-        
-    storage.setItem("Islogin", "Notlogin");
+        storage.setItem("Islogin", "Notlogin");
         return(
-            <h1>error</h1>
+            <div>
+                <input ref={(input) => {this.email = input}}/>
+                <input ref={(input) => {this.password = input}}/>
+                <button onClick={() => this.props.Login(this.email, this.password)}>Login</button>
+            </div>
         )
     }
 }

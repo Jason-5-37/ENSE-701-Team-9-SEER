@@ -3,16 +3,11 @@ import styled from "styled-components";
 export const HeaderWrapper = styled.div`
     height: 150px;
     width: 100%;
-<<<<<<< HEAD
-<<<<<<< HEAD:ENSE-701-Team-9-SEER/frontend/src/common/header/style.js
-=======
->>>>>>> Jason
     background:#0D1117;
     flow:left;
     '&:hover': {
         backgroundColor: 'white',
       },
-
 `;
 
 export const Title = styled.div`
@@ -40,7 +35,7 @@ export const Navbar = styled.div`
       },
 `
 
-export const NavItem = styled.a `
+export const NavItem = styled.a`
     font-size: 15px;
     float: left;
     cursor: pointer;
