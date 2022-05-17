@@ -17,7 +17,8 @@ export const postToDb = (titleElem, authorElem,sourceElem,DOIElem,PubYearElem,Cl
             ClaimedBenefit:ClaimedBenefirElem,
             LevelofEvidence:LevelofEvidenceElem
         };
-        axios.post('http://localhost:8082/api/articles',postdata).then((res) => {
+        axios.post('http://localhost:8082/api/NotSubmitArticles',postdata).then((res) => {
+            console.log(res);
             dispatch(PostState());
         }).catch(() => {
             console.log('error: Can not post');

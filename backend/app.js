@@ -6,6 +6,8 @@ var cors = require('cors');
 
 // routes
 const articles = require('./routes/api/articles');
+const NotSubmitArticles = require('./routes/api/NotSubmitArticles');
+const Manager = require('./routes/api/managers');
 
 const app = express();
 
@@ -22,6 +24,8 @@ app.get('/', (req, res) => res.send('Welcome to SPEED!'));
 
 // use Routes
 app.use('/api/articles', articles);
+app.use('/api/NotSubmitArticles', NotSubmitArticles);
+app.use('/api/manager', Manager);
 
 const port = process.env.PORT || 8082;
 

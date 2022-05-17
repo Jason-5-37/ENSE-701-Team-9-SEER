@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { SearchpageWrapper, SearchpageTitle, Articlelist } from './style';
+import { SearchpageWrapper, SearchpageTitle, Articlelist, SearchWrapper, Button } from './style';
 import { connect } from 'react-redux';
 import * as actionCreator from './store/actionCreator';
 
@@ -10,7 +10,11 @@ class Search_article extends Component {
     return (
       <SearchpageWrapper>
         <SearchpageTitle>Search article</SearchpageTitle>
-        {this.ShowArticles()}
+        <SearchWrapper>
+          <input ref={(input) => {this.search = input}}/>
+          <Button onClick={() => this.props.SetSearch(this.search)} ></Button>
+        </SearchWrapper>
+        {this.ShowArticles()}      
       </SearchpageWrapper>
     )
   }
@@ -50,6 +54,9 @@ const mapDispathTothis = (dispatch) => {
   return{
       handleInput(){
           dispatch(actionCreator.getArticles());
+      },
+      SetSearch(Searchinput){
+        dispatch(actionCreator.getSearchResult(Searchinput.value));
       }
   }
 }

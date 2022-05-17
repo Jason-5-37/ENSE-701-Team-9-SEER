@@ -10,6 +10,7 @@ import Search_article from "./page/Search_article";
 import Submit_article from "./page/Submit_article";
 import Contantus from "./page/Contantus";
 import NotFound from "./page/404";
+import Login from "./page/Login";
 
 class App extends Component {
 
@@ -24,6 +25,7 @@ class App extends Component {
             <Route exact path="/SearchArticle" component={Search_article} />
             <Route exact path="/SubmitArticle" component={Submit_article} />
             <Route exact path="/Contantus" component={Contantus} />
+            <Route exact path="/Login" component={Login} />
             <Route exact path="/404" component={NotFound} />
             <Route path="*" component={NotFound} />
           </Switch>

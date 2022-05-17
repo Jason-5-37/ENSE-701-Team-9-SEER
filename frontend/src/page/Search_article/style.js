@@ -30,3 +30,14 @@ export const Articlelist = styled.div`
     background: lightblue;
     text-decoration:none;
 `
+
+export const SearchWrapper = styled.div`
+    height: 100px;
+    width: 100%;
+    background:pink;
+`
+
+export const Button = styled.button`
+    height: 20%;
+    width: 5%;
+`
