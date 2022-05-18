@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { ContactusWrapper, ContactusTitle } from './style';
 
-class Contantus extends Component {
+class Contactus extends Component {
 
     render() {
         return (
@@ -18,4 +18,4 @@ class Contantus extends Component {
     }
 }
 
-export default Contantus;
+export default Contactus;
