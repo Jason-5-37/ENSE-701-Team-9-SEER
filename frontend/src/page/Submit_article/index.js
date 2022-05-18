@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { SubmitpageTitle, SubmitpageWrapper, SubmitInput, Button } from './style';
+import { SubmitpageTitle, SubmitpageWrapper, SubmitInput, Button, Input, InputWrapper2, Inputcontent, BackLink, Select } from './style';
 import { actionCreator } from './store/index';
 import { connect } from 'react-redux';
 
@@ -8,73 +8,91 @@ class Submit_article extends Component {
         const { postStatus } = this.props;
         if (postStatus === false) {
             return (
-                <SubmitpageWrapper>
+                <>
                     <SubmitpageTitle>Ei Yo submit your article here</SubmitpageTitle>
-                    <form>
-                        <SubmitInput>
-                            title:
-                            <input placeholder="title" ref={(input) => { this.title = input }} />
-                        </SubmitInput>
-                        <SubmitInput>
-                            author:
-                            <input placeholder="author" ref={(input) => { this.author = input }} />
-                        </SubmitInput>
-                        <SubmitInput>
-                            source:
-                            <input placeholder="source" ref={(input) => { this.source = input }} />
-                        </SubmitInput>
-                        <SubmitInput>
-                            DOI:
-                            <input placeholder="DOI" ref={(input) => { this.DOI = input }} />
-                        </SubmitInput>
-                        <SubmitInput>
-                            Public Year:
-                            <input placeholder="PubYear" ref={(input) => { this.PubYear = input }} type="date" />
-                        </SubmitInput>
-                        <SubmitInput>
-                            ClaimedBenefir:
-                            <input placeholder="ClaimedBenefir" ref={(input) => { this.ClaimedBenefir = input }} />
-                        </SubmitInput>
-                        <SubmitInput>
-                            LevelofEvidence:
-                            <input placeholder="LevelofEvidence" ref={(input) => { this.LevelofEvidence = input }} />
-                        </SubmitInput>
-                        <Button onClick={() => this.props.SubmitArticle(
-                            this.title,
-                            this.author,
-                            this.source,
-                            this.DOI,
-                            this.PubYear,
-                            this.ClaimedBenefir,
-                            this.LevelofEvidence
-                        )}>Submit</Button>
-                    </form>
-                </SubmitpageWrapper>)
+                    <SubmitpageWrapper>
+                        <form>
+                            <InputWrapper2>
+                                <SubmitInput>
+                                    <Inputcontent>
+                                        title:
+                                    </Inputcontent>
+                                    <Input placeholder="title" ref={(input) => { this.title = input }} />
+                                </SubmitInput>
+                                <SubmitInput>
+                                    <Inputcontent>
+                                        author:
+                                    </Inputcontent>
+                                    <Input placeholder="author" ref={(input) => { this.author = input }} />
+                                </SubmitInput>
+                                <SubmitInput>
+                                    <Inputcontent>
+                                        source:
+                                    </Inputcontent>
+                                    <Input placeholder="source" ref={(input) => { this.source = input }} />
+                                </SubmitInput>
+                                <SubmitInput>
+                                    <Inputcontent>
+                                        DOI:
+                                    </Inputcontent>
+                                    <Input placeholder="DOI" ref={(input) => { this.DOI = input }} />
+                                </SubmitInput>
+                                <SubmitInput>
+                                    <Inputcontent>
+                                        Public Year:
+                                    </Inputcontent>
+                                    <Input placeholder="PubYear" ref={(input) => { this.PubYear = input }} type="date" />
+                                </SubmitInput>
+                                <SubmitInput>
+                                    <Inputcontent>
+                                        Claimed Benefir:
+                                    </Inputcontent>
+                                    <Input placeholder="ClaimedBenefir" ref={(input) => { this.ClaimedBenefir = input }} />
+                                </SubmitInput>
+                                <SubmitInput>
+                                    <Inputcontent>
+                                        Level of Evidence:
+                                    </Inputcontent>
+                                    <Input placeholder="LevelofEvidence" ref={(input) => { this.LevelofEvidence = input }} />
+                                </SubmitInput>
+                                <SubmitInput>
+                                    <Inputcontent>
+                                        Type:
+                                    </Inputcontent>
+                                    <Select ref={(input) => { this.type = input }}>
+                                        <option value="TDD">TDD</option>
+                                        <option value="Mob Programming">Mob Programmin</option>
+                                    </Select>
+                                </SubmitInput>
+                            </InputWrapper2>
+
+                            <Button onClick={() => this.props.SubmitArticle(
+                                this.title,
+                                this.author,
+                                this.source,
+                                this.DOI,
+                                this.PubYear,
+                                this.ClaimedBenefir,
+                                this.LevelofEvidence,
+                                this.type
+                            )}>Submit</Button>
+
+                        </form>
+
+                    </SubmitpageWrapper>
+                </>
+            )
         } else if (postStatus === true) {
             return (
-                <div>
-                    <h1>Post successful</h1>
-                    <h1>Post successful</h1>
-                    <h1>Post successful</h1>
-                    <h1>Post successful</h1>
-                    <h1>Post successful</h1>
-                    <h1>Post successful</h1>
-                    <h1>Post successful</h1>
-                    <a href="/">Back to Home page</a>
-                </div>
+                <>
+                    <SubmitpageTitle>Post successful</SubmitpageTitle>
+                    <SubmitpageTitle><BackLink href="/">Back to Home page</BackLink></SubmitpageTitle>
+                </>
             )
         } else {
             return (
                 <div>
-                    <h1>error</h1>
-                    <h1>error</h1>
-                    <h1>error</h1>
-                    <h1>error</h1>
-                    <h1>error</h1>
-                    <h1>error</h1>
-                    <h1>error</h1>
-                    <h1>error</h1>
-                    <h1>error</h1>
+                    <SubmitpageTitle>Error. Fail to Submit</SubmitpageTitle>
                 </div>
             )
         }
@@ -86,7 +104,7 @@ const mapState = (state) => ({
 });
 
 const mapDispatch = (dispatch) => ({
-    SubmitArticle(titleElem, authorElem, sourceElem, DOIElem, PubYearElem, ClaimedBenefirElem, LevelofEvidenceElem) {
+    SubmitArticle(titleElem, authorElem, sourceElem, DOIElem, PubYearElem, ClaimedBenefirElem, LevelofEvidenceElem, type) {
         dispatch(actionCreator.postToDb(
             titleElem.value,
             authorElem.value,
@@ -94,7 +112,8 @@ const mapDispatch = (dispatch) => ({
             DOIElem.value,
             PubYearElem.value,
             ClaimedBenefirElem.value,
-            LevelofEvidenceElem.value));
+            LevelofEvidenceElem.value,
+            type.value));
     }
 });
 

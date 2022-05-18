@@ -1,5 +1,5 @@
 import { fromJS } from "immutable";
-import * as constants from './constants';
+import * as constants from './constactus';
 
 const defaultState = fromJS({
     post: false
@@ -7,7 +7,7 @@ const defaultState = fromJS({
 
 
 const submitstate = (state = defaultState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case constants.POSTREQEST:
             return state.set('post', true);
         default:
