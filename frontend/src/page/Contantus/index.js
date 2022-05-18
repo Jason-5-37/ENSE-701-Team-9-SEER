@@ -9,8 +9,8 @@ class Contantus extends Component {
                 <ContactusWrapper>
                     <ContactusTitle>Contact us</ContactusTitle>
                     <p>Any question pleace Contact us by:</p>
-                    <p>Phone number:888888888</p>
-                    <p>Eamil: xxxxxxx</p>
+                    <p>Phone number:0223021599</p>
+                    <p>Eamil:skw0852@aut.ac.nz</p>
                 </ContactusWrapper>
             </div>
 
