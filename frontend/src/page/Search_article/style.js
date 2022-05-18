@@ -1,28 +1,39 @@
 import styled from "styled-components";
 
 export const SearchpageWrapper = styled.div`
-    width: 70%;
-    background: grey;
-    margin: 5% auto;
-    padding: 1% 1%;
+color:White;
+background-color: #0D1117;
+text-align: center;
+margin-top:15px;
+margin-bottom:10px;
 `;
 
 export const SearchpageTitle = styled.div`
-    height: 20%;
-    width: 100%;
-    background: pink;
-    margin: 5% auto;
-    font-size: 200%;
-    text-align: center;
+height: 20%;
+width: 100%;
+background-color:#0D1117;
+color:White;
+
+margin: 2% auto;
+font-size: 200%;
+text-align: center;
 `;
 
-export const Articlelist = styled.div`
-    display: block;
-    float: left;
-    margin: auto;
-    border: 5px solid pink;
-    border-radius: 2px;
-    margin: 5% 5%;
-    background: lightblue;
-    text-decoration:none;
+export const SearchWrapper = styled.div`
+    width: 50%;
+    margin:auto;
+    margin-bottom: 2%;
+`
+
+export const TableWrapper = styled.div`
+    width: 90%;
+    margin:auto;
+`
+
+export const Button = styled.button`
+`
+
+
+export const Select = styled.select`
+    
 `
