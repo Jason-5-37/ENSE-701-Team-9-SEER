@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { SubmitpageTitle, SubmitpageWrapper, SubmitInput, Button } from './style';
 import { actionCreator } from './store/index';
 import { connect } from 'react-redux';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Submit_article extends Component {
   render() {
@@ -11,34 +12,68 @@ class Submit_article extends Component {
         <SubmitpageWrapper>
           <SubmitpageTitle>Ei Yo submit your article here</SubmitpageTitle>
           <form>
+          <div class="row mb-3"><label for="inputEmail3" class="col-sm-2 col-form-label">
             <SubmitInput>
-            title: 
-              <input placeholder="title" ref={(input) => {this.title = input}}/>
+              
+            Title: <div class="col-sm-10">
+              <input placeholder="title" ref={(input) => {this.title = input}}/></div>
             </SubmitInput>
+            </label>
+</div>
+
+
+
+
             <SubmitInput>
-            author: 
+            Author: 
               <input placeholder="author" ref={(input) => {this.author = input}}/>
             </SubmitInput>
+
+
+
+
+
             <SubmitInput>
-            source: 
+            Source: 
               <input placeholder="source" ref={(input) => {this.source = input}}/>
             </SubmitInput>
+
+
+
+
             <SubmitInput>
             DOI: 
               <input placeholder="DOI" ref={(input) => {this.DOI = input}}/>
             </SubmitInput>
+
+
+
+
             <SubmitInput>
             Public Year: 
               <input placeholder="PubYear" ref={(input) => {this.PubYear = input}} type="date" />
             </SubmitInput>
+
+
+
+
             <SubmitInput>
             ClaimedBenefir: 
               <input placeholder="ClaimedBenefir" ref={(input) => {this.ClaimedBenefir = input}}/>
             </SubmitInput>
+
+
+
             <SubmitInput>
             LevelofEvidence: 
               <input placeholder="LevelofEvidence" ref={(input) => {this.LevelofEvidence = input}}/>
             </SubmitInput>
+
+
+
+
+
+
             <Button onClick={() => this.props.SubmitArticle(
               this.title,
               this.author,
@@ -50,6 +85,12 @@ class Submit_article extends Component {
               )}>Submit</Button>
           </form>
         </SubmitpageWrapper>)
+
+
+
+
+
+
         }else if( postStatus === true ){
           return(
             <div>
