@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { SearchpageWrapper, SearchpageTitle, Articlelist, SearchWrapper, Button } from './style';
+import { SearchpageWrapper, SearchpageTitle, TableWrapper, SearchWrapper, Button, Select } from './style';
 import { connect } from 'react-redux';
 import * as actionCreator from './store/actionCreator';
+import Table from "../../common/Table/ReactTable";
+import tablecolumns from "../../common/Table/TableColumns";
 
 class Search_article extends Component {
 
@@ -11,42 +13,34 @@ class Search_article extends Component {
       <SearchpageWrapper>
         <SearchpageTitle>Search article</SearchpageTitle>
         <SearchWrapper>
+        <Select ref={(input) => {this.Articletype = input}}>
+          <option value="All">All</option>
+          <option value="TDD">TDD</option>
+          <option value="Mob Programming">Mob Programmin</option>
+        </Select>
+        <Button onClick={() => this.props.SelectType(this.Articletype)}>Go</Button>
           <input ref={(input) => {this.search = input}}/>
-          <Button onClick={() => this.props.SetSearch(this.search)} ></Button>
+          <Button onClick={() => this.props.SetSearch(this.search)} >Search Title</Button>
         </SearchWrapper>
-        {this.ShowArticles()}      
-      </SearchpageWrapper>
+        <TableWrapper>
+          <Table 
+            data={this.props.list} 
+            columns={tablecolumns}
+            />
+        </TableWrapper>
+        </SearchpageWrapper>
     )
   }
 
   componentDidMount(){
-    this.props.handleInput();
+    this.props.SelectType(this.Articletype)
   }
-
-  ShowArticles(){
-    const {list} = this.props;
-    return list.map((item) =>{
-      return (
-      <Link key={item.get('id')}>
-        <Articlelist>
-          <div>{item.get('title')}</div>
-          <div>{item.get('author')}</div>
-          <div>{item.get('source')}</div>
-          <div>{item.get('DOI')}</div>
-          <div>{item.get('ClaimedBenefit')}</div>
-          <div>{item.get('published_date')}</div>
-          <div>{item.get('LevelofEvidence')}</div>
-          </Articlelist>
-          </Link>
-          );
-        }
-        );
-      }
 }
 
 const mapStateTothis= (state) => {
   return {
-      list: state.getIn(['Search','list'])
+      list: state.getIn(['Search','list']),
+      Type: state.getIn(['Search','Type'])
   }
 }
 
@@ -57,6 +51,9 @@ const mapDispathTothis = (dispatch) => {
       },
       SetSearch(Searchinput){
         dispatch(actionCreator.getSearchResult(Searchinput.value));
+      },
+      SelectType(Type){
+        dispatch(actionCreator.getType(Type.value));
       }
   }
 }

@@ -25,7 +25,7 @@ class Header extends Component {
       return(
         <div>
         <NavItem href="/CheckandApprove">Check and Approve</NavItem>
-        <button onClick={() => this.logout()}>Logout</button>
+        <NavItem onClick={() => this.logout()}>Logout</NavItem>
         </div>
       )
     }else{

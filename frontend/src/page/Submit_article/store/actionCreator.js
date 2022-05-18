@@ -6,7 +6,7 @@ const PostState = () => ({
 })
 
 
-export const postToDb = (titleElem, authorElem,sourceElem,DOIElem,PubYearElem,ClaimedBenefirElem,LevelofEvidenceElem) => {
+export const postToDb = (titleElem, authorElem,sourceElem,DOIElem,PubYearElem,ClaimedBenefirElem,LevelofEvidenceElem, typevalue) => {
     return(dispatch) => {
         let postdata = {
             title:titleElem,
@@ -15,7 +15,8 @@ export const postToDb = (titleElem, authorElem,sourceElem,DOIElem,PubYearElem,Cl
             published_date:PubYearElem,
             DOI:DOIElem,
             ClaimedBenefit:ClaimedBenefirElem,
-            LevelofEvidence:LevelofEvidenceElem
+            LevelofEvidence:LevelofEvidenceElem,
+            type:typevalue
         };
         axios.post('http://localhost:8082/api/NotSubmitArticles',postdata).then((res) => {
             console.log(res);

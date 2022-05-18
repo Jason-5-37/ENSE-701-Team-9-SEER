@@ -14,29 +14,25 @@ export const CheckTitle = styled.div`
     width: 100%;
     background-color:#161B22;
     color:White;
-   
     margin: 5% auto;
     font-size: 200%;
     text-align: center;
 `;
 
 export const Articlelist = styled.div`
-    display: block;
+    width:100%
     float: left;
     margin: auto;
-    border: 5px solid pink;
     border-radius: 2px;
     margin: 5% 5%;
-    background: lightblue;
-    text-decoration:none;
 `;
 
 
 export const ArticleWapper = styled.div`
     float: left;
-    margin: auto;
-    border: 5px solid white;
+    border: 2px solid white;
     border-radius: 2px;
     margin: 5% 5%;
     text-decoration:none;
+    display: flex;
 `;

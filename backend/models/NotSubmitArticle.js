@@ -13,7 +13,7 @@ const NotSubmitArticleSchema = new mongoose.Schema({
         type: String
     },
     published_date: {
-        type: Date
+        type: String
     },
     DOI: {
         type: String
@@ -27,6 +27,10 @@ const NotSubmitArticleSchema = new mongoose.Schema({
     updated_date: {
         type: Date,
         default: Date.now
+    },
+    type: {
+        type:String,
+        required: true
     }
 });
 

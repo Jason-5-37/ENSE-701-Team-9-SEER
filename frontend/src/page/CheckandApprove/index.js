@@ -23,13 +23,14 @@ class CheckandApprove extends Component {
       return (
       <ArticleWapper key={item.get('_id')}>
         <Articlelist>
-          <div>{item.get('title')}</div>
-          <div>{item.get('author')}</div>
-          <div>{item.get('source')}</div>
-          <div>{item.get('DOI')}</div>
-          <div>{item.get('ClaimedBenefit')}</div>
-          <div>{item.get('published_date')}</div>
-          <div>{item.get('LevelofEvidence')}</div>
+          <div>Title: {item.get('title')}</div>
+          <div>Author: {item.get('author')}</div>
+          <div>Source: {item.get('source')}</div>
+          <div>DOI: {item.get('DOI')}</div>
+          <div>ClaimedBenefit: {item.get('ClaimedBenefit')}</div>
+          <div>published date: {item.get('published_date')}</div>
+          <div>Level of Evidence: {item.get('LevelofEvidence')}</div>
+          <div>type: {item.get('type')}</div>
           </Articlelist>
 
           <button onClick={() => this.props.ApproveArticle(
@@ -40,7 +41,13 @@ class CheckandApprove extends Component {
               item.get('DOI'),
               item.get('ClaimedBenefit'),
               item.get('published_date'),
-              item.get('LevelofEvidence'))}>Approve this Article</button>
+              item.get('LevelofEvidence'),
+              item.get('type')
+              )
+            }
+              >
+                Approve this Article
+              </button>
           </ArticleWapper>
 
           );
@@ -61,8 +68,8 @@ const mapStateTothis= (state) => {
         handleInput(){
             dispatch(actionCreator.getReqArticles());
         },
-        ApproveArticle(id,title, author, source, DOI, ClaimedBenefit, published_date, LevelofEvidence){
-            dispatch(actionCreator.postAticle(id, title, author, source, DOI, ClaimedBenefit, published_date, LevelofEvidence));
+        ApproveArticle(id,title, author, source, DOI, ClaimedBenefit, published_date, LevelofEvidence, type){
+            dispatch(actionCreator.postAticle(id, title, author, source, DOI, ClaimedBenefit, published_date, LevelofEvidence, type));
         }
     }
   }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import * as actionCreator from './store/actionCreator';
+import { LoginWrapper, LoginTitle, Content} from "./style";
 
 class Login extends Component {
     render() {
@@ -11,9 +12,18 @@ class Login extends Component {
     if(Islogin === "Notlogin"){
         return (
             <div>
-                <input ref={(input) => {this.email = input}}/>
+                <LoginTitle>Login</LoginTitle>
+                <LoginWrapper>
+                <Content>
+                Email:
+                <input ref={(input) => {this.email = input}} />
+                </Content>
+                Password:
                 <input ref={(input) => {this.password = input}}/>
+                <Content>
                 <button onClick={() => this.props.Login(this.email, this.password)}>Login</button>
+                </Content>
+                </LoginWrapper>
             </div>
         )
     }else if(Islogin === "login"){
@@ -22,9 +32,12 @@ class Login extends Component {
         storage.setItem("Islogin", "Notlogin");
         return(
             <div>
+                <LoginTitle>Login</LoginTitle>
+                <LoginWrapper>
                 <input ref={(input) => {this.email = input}}/>
                 <input ref={(input) => {this.password = input}}/>
                 <button onClick={() => this.props.Login(this.email, this.password)}>Login</button>
+                </LoginWrapper>
             </div>
         )
     }

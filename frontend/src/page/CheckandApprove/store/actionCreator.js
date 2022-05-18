@@ -19,7 +19,7 @@ export const getReqArticles = () => {
     }
 }
 
-export const postAticle = (id, title, author, source, DOI, ClaimedBenefit, published_date, LevelofEvidence) => {
+export const postAticle = (id, title, author, source, DOI, ClaimedBenefit, published_date, LevelofEvidence, type) => {
     return() => {
         let postdate = {
             "title": title, 
@@ -28,7 +28,8 @@ export const postAticle = (id, title, author, source, DOI, ClaimedBenefit, publi
             "DOI":DOI, 
             "ClaimedBenefit":ClaimedBenefit, 
             "published_date":published_date, 
-            "LevelofEvidence":LevelofEvidence
+            "LevelofEvidence":LevelofEvidence,
+            "type":type
         }
         axios.post('http://localhost:8082/api/articles',postdate).then((res) => {
             console.log(res);

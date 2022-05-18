@@ -20,6 +20,13 @@ router.get('/', (req, res) => {
     .catch(err => res.status(404).json({ nobooksfound: 'No article found' }));
 });
 
+
+router.post('/type', (req, res) => {
+    Article.find({'type':req.body.title})
+      .then(articles => res.json(articles))
+      .catch(err => res.status(404).json({ nobooksfound: 'No article found' }));
+  });
+
 // @route GET api/books/:id
 // @description Get single book by id
 // @access Public
