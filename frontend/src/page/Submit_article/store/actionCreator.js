@@ -1,5 +1,5 @@
 import axios from "axios";
-import * as constants from './constactus';
+import * as constants from './constants';
 
 const PostState = () => ({
     type: constants.POSTREQEST
