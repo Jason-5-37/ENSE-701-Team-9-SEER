@@ -11,8 +11,7 @@ import Submit_article from "./page/Submit_article";
 import Contantus from "./page/Contantus";
 import NotFound from "./page/404";
 import Login from "./page/Login";
-import CheckandApprove from "./page/CheckandApprove";
-
+import CheckandApprove from "./page/CheckandApprove";;
 class App extends Component {
 
   render() {

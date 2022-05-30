@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { ContactusWrapper, ContactusTitle } from "./style";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
+import sucess from "./sucess.js";
+
 class Contantus extends Component {
   state = {
     email: "",
@@ -54,7 +56,7 @@ formSubmit=(e)=>
               Textarea
             </label>
             <textarea class="form-control" id="FormControlTextarea1" rows="10" placeholder="Please input anything you would like to speak to us " value={this.state.message} onChange={this.handleMessage}></textarea>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button type="submit" class="btn btn-primary"value="submit">Submit</button></a>
+            <a href="sucess.js"><button type="submit" class="btn btn-primary"value="submit">Submit</button></a>
           </div>
           <p>Or you can Contact us by:</p>
           <br></br>
