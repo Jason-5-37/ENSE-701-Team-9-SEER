@@ -9,7 +9,7 @@ const getList = (data) => ({
 
 export const getReqArticles = () => {
     return (dispatch) => {
-        axios.get('http://localhost:8082/api/NotSubmitArticles/').then((res) => {
+        axios.get('https://ense-701-team-9-seer.herokuapp.com/api/NotSubmitArticles/').then((res) => {
             const data = res.data;
             console.log(data);
             dispatch(getList(data));
@@ -31,7 +31,7 @@ export const postAticle = (id, title, author, source, DOI, ClaimedBenefit, publi
             "LevelofEvidence":LevelofEvidence,
             "type":type
         }
-        axios.post('http://localhost:8082/api/articles',postdate).then((res) => {
+        axios.post('https://ense-701-team-9-seer.herokuapp.com/api/articles',postdate).then((res) => {
             console.log(res);
         }).catch(() => {
             console.log('error: Can not post');
@@ -39,12 +39,48 @@ export const postAticle = (id, title, author, source, DOI, ClaimedBenefit, publi
 
         console.log(id);
 
-        axios.delete('http://localhost:8082/api/NotSubmitArticles/'+id).then((res) => {
+        axios.delete('https://ense-701-team-9-seer.herokuapp.com/api/NotSubmitArticles/'+id).then((res) => {
             console.log(res);
-            window.location.href = './CheckandApprove';
+            
         }).catch(() => {
             console.log('error: Can not delete');
         })
     }
 }
-    
+
+export const DeleteAticle = (id) => {
+    return (dispatch) => {
+        axios.delete('https://ense-701-team-9-seer.herokuapp.com/api/NotSubmitArticles/'+id).then((res) => {
+            window.location.href = './CheckandApprove';
+        }).catch(() => {
+            console.log('error: Can not get List');
+        })
+    }
+}
+
+const getApproveList = (data) => ({
+    type: constants.GETLIST,
+    data: fromJS(data)
+})
+
+export const getArticles = () => {
+    return (dispatch) => {
+        axios.get('https://ense-701-team-9-seer.herokuapp.com/api/articles/').then((res) => {
+            const data = res.data;
+            console.log(data);
+            dispatch(getApproveList(data));
+        }).catch(() => {
+            console.log('error: Can not get List');
+        })
+    }
+}
+
+export const DeleteApproveAticle = (id) => {
+    return (dispatch) => {
+        axios.delete('https://ense-701-team-9-seer.herokuapp.com/api/articles/'+id).then((res) => {
+            window.location.href = './CheckandApprove';
+        }).catch(() => {
+            console.log('error: Can not get List');
+        })
+    }
+}

@@ -9,7 +9,7 @@ const changeList = (data) => ({
 
 export const getArticles = () => {
     return (dispatch) => {
-        axios.get('http://localhost:8082/api/articles/').then((res) => {
+        axios.get('https://ense-701-team-9-seer.herokuapp.com/api/articles/').then((res) => {
             const data = res.data;
             console.log(data);
             dispatch(changeList(data));
@@ -24,7 +24,7 @@ export const getSearchResult = (Searchinput) =>{
         let postdate = {
             "title": Searchinput
         }
-        axios.post('http://localhost:8082/api/articles/search_article',postdate).then((res) =>{
+        axios.post('https://ense-701-team-9-seer.herokuapp.com/api/articles/search_article',postdate).then((res) =>{
             const data = res.data;
             dispatch(changeList(data));
         }).catch(() => {
@@ -36,7 +36,7 @@ export const getSearchResult = (Searchinput) =>{
 export const getType = (Type) => {
     return(dispatch) =>{
         if (Type === "All"){
-            axios.get('http://localhost:8082/api/articles/').then((res) => {
+            axios.get('https://ense-701-team-9-seer.herokuapp.com/api/articles/').then((res) => {
                 const data = res.data;
                 console.log(data);
                 dispatch(changeList(data));
@@ -47,7 +47,7 @@ export const getType = (Type) => {
             let postdate = {
                 "type": Type
             }
-            axios.post('http://localhost:8082/api/articles/type', postdate).then((res) => {
+            axios.post('https://ense-701-team-9-seer.herokuapp.com/api/articles/type', postdate).then((res) => {
                 const data = res.data;
                 console.log(data);
                 dispatch(changeList(data));

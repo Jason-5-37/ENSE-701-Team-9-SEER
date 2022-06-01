@@ -7,7 +7,7 @@ export const login = (Email, Password) =>{
             "email": Email,
             "password": Password
         }
-        axios.post('http://localhost:8082/api/manager/Search_manager',postdate).then((res) =>{
+        axios.post('https://ense-701-team-9-seer.herokuapp.com/api/manager/Search_manager',postdate).then((res) =>{
             const data = res.data;
             //console.log(data[0].email);
             if(data[0].email === Email && data[0].password === Password){

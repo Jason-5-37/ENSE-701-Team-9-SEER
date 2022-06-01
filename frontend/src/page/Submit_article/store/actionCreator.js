@@ -18,7 +18,7 @@ export const postToDb = (titleElem, authorElem,sourceElem,DOIElem,PubYearElem,Cl
             LevelofEvidence:LevelofEvidenceElem,
             type:typevalue
         };
-        axios.post('http://localhost:8082/api/NotSubmitArticles',postdata).then((res) => {
+        axios.post('https://ense-701-team-9-seer.herokuapp.com/api/NotSubmitArticles',postdata).then((res) => {
             console.log(res);
             dispatch(PostState());
         }).catch(() => {

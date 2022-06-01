@@ -36,3 +36,9 @@ export const ArticleWapper = styled.div`
     text-decoration:none;
     display: flex;
 `;
+
+export const Wrapper = styled.div`
+    background:white;
+    width:500px;
+    margin:auto;
+`

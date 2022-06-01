@@ -19,9 +19,12 @@ class Login extends Component {
                 <input ref={(input) => {this.email = input}} />
                 </Content>
                 Password:
-                <input ref={(input) => {this.password = input}}/>
+                <input type="password" ref={(input) => {this.password = input}}/>
                 <Content>
                 <button onClick={() => this.props.Login(this.email, this.password)}>Login</button>
+                <h1>Account:</h1>
+                <h1>Jason@gmail.com</h1>
+                <h1>123456</h1>
                 </Content>
                 </LoginWrapper>
             </div>
@@ -48,7 +51,7 @@ const mapStateTothis= (state) => {
     return {
     }
 }
-  
+
 const mapDispathTothis = (dispatch) => {
     return{
         Login(email,password){
