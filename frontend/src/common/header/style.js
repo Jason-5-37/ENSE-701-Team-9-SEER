@@ -1,28 +1,39 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
-    height: 100%;
-    width: 200px;
-    background: lightblue;
+    height: 150px;
+    width: 100%;
+    background:#0D1117;
     flow:left;
+    '&:hover': {
+        backgroundColor: 'white',
+      },
 `;
 
 export const Title = styled.div`
-    height: 60%;
-    width: 90%;
+    height: 50%;
+    width: 100%;
     flow: leff;
+    color: white;
     padding-left: 3%;
     line-height: 250%;
-    background: pink;
+    background: #161B22;
     font-size: 200%;
-`;
+    '&:hover': {
+        backgroundColor: 'white',
+      },
+`
 
 export const Navbar = styled.div`
-    height: 40%;
+    margin-top:50%
+    height: 10%;
     width: 100%;
     flow: leff;
     padding-left: 2%;
-`;
+    '&:hover': {
+        backgroundColor: 'white',
+      },
+`
 
 export const NavItem = styled.a`
     font-size: 15px;
@@ -30,7 +41,10 @@ export const NavItem = styled.a`
     cursor: pointer;
     line-height: 200%;
     margin-left: 25px;
-    color: #0008FF;
+    color:#58A6FF;
     text-decoration: none;
     font-size: 150%;
-`;
+    '&:hover': {
+        backgroundColor: 'white',
+      },
+`
