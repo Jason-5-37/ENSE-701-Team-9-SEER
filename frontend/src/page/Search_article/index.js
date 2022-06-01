@@ -13,12 +13,14 @@ class Search_article extends Component {
       <SearchpageWrapper>
         <SearchpageTitle>Search article</SearchpageTitle>
         <SearchWrapper>
+        {/*Slect type of the articles*/}
         <Select ref={(input) => {this.Articletype = input}}>
           <option value="All">All</option>
           <option value="TDD">TDD</option>
           <option value="Mob Programming">Mob Programmin</option>
         </Select>
         <Button onClick={() => this.props.SelectType(this.Articletype)}>Go</Button>
+        {/*Search for articles*/}
           <input ref={(input) => {this.search = input}}/>
           <Button onClick={() => this.props.SetSearch(this.search)} >Search Title</Button>
         </SearchWrapper>
@@ -26,13 +28,14 @@ class Search_article extends Component {
           <Table 
             data={this.props.list} 
             columns={tablecolumns}
-            />
+          />
         </TableWrapper>
         </SearchpageWrapper>
     )
   }
 
   componentDidMount(){
+    //Input the select value
     this.props.SelectType(this.Articletype)
   }
 }

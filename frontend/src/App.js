@@ -6,6 +6,7 @@ import store from './store';
 
 import Header from "./common/header";
 import Home from "./page/Home";
+import sucess from "./page/sucess";
 import Search_article from "./page/Search_article";
 import Submit_article from "./page/Submit_article";
 import Contantus from "./page/Contantus";
@@ -27,6 +28,7 @@ class App extends Component {
             <Route exact path="/SubmitArticle" component={Submit_article} />
             <Route exact path="/Contantus" component={Contantus} />
             <Route exact path="/Login" component={Login} />
+            <Route exact path="/sucess" component={sucess} />
             <Route exact path="/CheckandApprove" component={CheckandApprove} />
             <Route exact path="/404" component={NotFound} />
             <Route path="*" component={NotFound} />
